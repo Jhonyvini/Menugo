@@ -10,7 +10,7 @@
             --primary: #008f68; 
             --primary-hover: #007a58;
             --accent: #00ffaa; 
-            --whatsapp: #25D366; /* Cor oficial do Zap */
+            --whatsapp: #25D366;
             
             --dark: #0f1110;       
             --dark-card: #1a1d1c;  
@@ -33,17 +33,16 @@
         header { 
             padding: 30px 0; 
             display: flex; 
-            justify-content: center; /* Centralizei a logo já que não tem botão */
+            justify-content: center; 
             align-items: center; 
         }
 
         .logo-img {
-            height: 90px; /* AUMENTADO: Bem maior no PC */
+            height: 90px;
             width: auto;
             display: block;
             transition: transform 0.3s;
         }
-        
         .logo-img:hover { transform: scale(1.05); }
 
         /* --- BOTÃO FLUTUANTE WHATSAPP --- */
@@ -66,13 +65,8 @@
             transition: all 0.3s ease;
             animation: pulse 2s infinite;
         }
+        .whatsapp-float:hover { transform: scale(1.1); background-color: #20b858; }
 
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            background-color: #20b858;
-        }
-
-        /* Animaçãozinha para chamar atenção */
         @keyframes pulse {
             0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
             70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
@@ -118,7 +112,7 @@
             color: #fff; 
         }
 
-        /* --- HERO SECTION (CAPA) --- */
+        /* --- HERO SECTION --- */
         .hero {
             padding: 40px 0 60px 0;
             text-align: center;
@@ -148,7 +142,7 @@
             margin-right: auto; 
         }
 
-        /* --- SEÇÃO CALCULADORA --- */
+        /* --- CALCULADORA --- */
         .calculator-section {
             background-color: var(--dark-card);
             padding: 60px 0;
@@ -167,12 +161,7 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
-        .input-group label {
-            display: block;
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-            color: var(--light);
-        }
+        .input-group label { display: block; font-size: 1.1rem; margin-bottom: 10px; color: var(--light); }
 
         .money-input {
             background: #1a1d1c;
@@ -188,81 +177,72 @@
             margin-bottom: 30px;
         }
 
-        .results-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .result-card {
-            background: #1a1d1c;
-            padding: 20px;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-        }
-
+        .results-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .result-card { background: #1a1d1c; padding: 20px; border-radius: 12px; border: 1px solid var(--border); }
         .result-card h3 { font-size: 0.8rem; color: var(--gray); margin-bottom: 5px; text-transform: uppercase; }
         .result-card .value { font-size: 1.8rem; font-weight: bold; }
-        
         .loss-value { color: #ff4d4d; }
         .profit-value { color: var(--primary); }
 
         /* --- BENEFÍCIOS --- */
         .features { padding: 80px 0; }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
+        .feature-card { background: var(--dark-card); padding: 30px; border-radius: 15px; border: 1px solid var(--border); transition: 0.3s; }
+        .feature-card:hover { transform: translateY(-5px); border-color: var(--primary); }
+        .icon { font-size: 2rem; margin-bottom: 15px; display: block; color: var(--accent); }
 
-        .feature-card {
-            background: var(--dark-card);
-            padding: 30px;
-            border-radius: 15px;
-            border: 1px solid var(--border);
-            transition: 0.3s;
-        }
-
-        .feature-card:hover { 
-            transform: translateY(-5px); 
-            border-color: var(--primary); 
-        }
-
-        .icon { 
-            font-size: 2rem; 
-            margin-bottom: 15px; 
-            display: block; 
-            color: var(--accent);
-        }
-
-        /* --- DEMO SECTION --- */
+        /* --- DEMO AO VIVO (SIMULADOR CELULAR) --- */
         .demo-section {
             background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80');
             background-size: cover;
             background-attachment: scroll;
-            padding: 100px 0;
+            padding: 80px 0;
             text-align: center;
         }
 
-        /* --- RODAPÉ --- */
-        footer { 
-            text-align: center; 
-            padding: 40px 0; 
-            color: var(--gray); 
-            font-size: 0.9rem; 
-            border-top: 1px solid var(--border); 
-            background-color: var(--dark-card);
+        /* A Mágica do Simulador de Celular */
+        .phone-mockup {
+            width: 350px;
+            height: 700px;
+            background-color: #000; /* Borda preta do celular */
+            margin: 40px auto;
+            border-radius: 40px;
+            border: 12px solid #1a1a1a;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+            overflow: hidden;
         }
 
-        /* --- AJUSTES PARA CELULAR (MOBILE) --- */
+        /* O "Furo" da câmera do celular */
+        .phone-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 25px;
+            background-color: #1a1a1a;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            z-index: 10;
+        }
+
+        /* O site rodando dentro */
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            border-radius: 25px; /* Arredonda a tela interna */
+            background: white;
+            border: none;
+        }
+
+        /* --- RODAPÉ --- */
+        footer { text-align: center; padding: 40px 0; color: var(--gray); font-size: 0.9rem; border-top: 1px solid var(--border); background-color: var(--dark-card); }
+
+        /* --- AJUSTES PARA CELULAR REAL (RESPONSIVO) --- */
         @media (max-width: 768px) {
             .container { padding: 0 15px; }
-            
-            /* Logo maior no mobile também */
             .logo-img { height: 70px; margin-bottom: 10px; }
-            
             .hero { padding: 20px 0; }
             .hero h1 { font-size: 2.2rem; }
             .hero p { font-size: 1rem; margin-bottom: 30px; }
@@ -273,19 +253,16 @@
             .calculator-section { padding: 40px 0; }
             .calculator-box { padding: 25px 15px; }
             .money-input { width: 100%; max-width: 100%; font-size: 1.8rem; }
-            
             .results-grid { grid-template-columns: 1fr; gap: 15px; }
-            .features { padding: 60px 0; }
-            .features-grid { grid-template-columns: 1fr; }
-
-            /* Ajuste do botão flutuante no mobile para não atrapalhar */
-            .whatsapp-float {
-                width: 55px;
-                height: 55px;
-                bottom: 20px;
-                right: 20px;
-                font-size: 28px;
+            
+            /* Ajuste do Simulador no Celular Real */
+            .phone-mockup {
+                width: 100%; /* Ocupa a largura total */
+                max-width: 320px; /* Mas não estoura */
+                height: 550px; /* Um pouco menor para caber na tela */
+                border-width: 8px;
             }
+            .whatsapp-float { width: 55px; height: 55px; bottom: 20px; right: 20px; font-size: 28px; }
         }
     </style>
 </head>
@@ -302,16 +279,15 @@
             <a href="#">
                 <img src="https://i.imgur.com/oX3WsMq.png" alt="Logo Menu Go" class="logo-img">
             </a>
-            </header>
+        </header>
     </div>
 
     <section class="hero container">
         <h1>Seu Delivery no<br><span>Piloto Automático</span></h1>
         <p>Receba pedidos direto no WhatsApp e livre-se das taxas abusivas. O cardápio digital que vende por você.</p>
-        
         <div>
             <a href="https://wa.me/5531987838469" class="btn btn-primary">Começar Agora</a>
-            <a href="https://stoplanches.vercel.app/" target="_blank" class="btn btn-outline">Testar Cardápio Demo</a>
+            <a href="#demo" class="btn btn-outline">Ver Demonstração</a>
         </div>
     </section>
 
@@ -319,25 +295,21 @@
         <div class="container">
             <h2>Simule sua Economia</h2>
             <p style="color: var(--gray); margin-bottom: 20px;">Veja quanto dinheiro você perde todo mês.</p>
-            
             <div class="calculator-box">
                 <div class="input-group">
                     <label for="faturamento">Vendas Mensais nos Apps (R$)</label>
                     <input type="number" id="faturamento" class="money-input" value="10000" oninput="calcularPrejuizo()">
                 </div>
-
                 <div class="results-grid">
                     <div class="result-card" style="border-color: #ff4d4d33;">
                         <h3>Você Perde em Taxas (27%)</h3>
                         <div class="value loss-value" id="perda">R$ 2.700,00</div>
                     </div>
-
                     <div class="result-card" style="border-color: var(--primary);">
                         <h3>Custo Menu Go</h3>
                         <div class="value profit-value">R$ 0,00</div>
                     </div>
                 </div>
-
                 <div style="margin-top: 30px;">
                     <p style="margin-bottom: 15px; font-size: 1.1rem;">Tenha <span id="economia-texto" style="color: var(--primary); font-weight: bold;">R$ 2.700,00</span> a mais no bolso.</p>
                     <a href="https://wa.me/5531987838469" class="btn btn-primary">Quero Economizar</a>
@@ -367,11 +339,17 @@
         </div>
     </section>
 
-    <section class="demo-section">
+    <section id="demo" class="demo-section">
         <div class="container">
-            <h2>Veja funcionando</h2>
-            <p style="color: #fff; margin-bottom: 30px;">Acesse nosso modelo de demonstração.</p>
-            <a href="https://stoplanches.vercel.app/" target="_blank" class="btn btn-primary">Abrir Demo Agora</a>
+            <h2>Experimente Agora</h2>
+            <p style="color: #fff; margin-bottom: 20px;">Este é um cardápio real. Pode clicar e mexer!</p>
+            
+            <div class="phone-mockup">
+                <div class="phone-notch"></div>
+                <iframe src="https://stoplanches.vercel.app/" class="phone-screen" title="Demo Stop Lanches"></iframe>
+            </div>
+
+            <a href="https://stoplanches.vercel.app/" target="_blank" class="btn btn-primary">Abrir em Tela Cheia</a>
         </div>
     </section>
 
