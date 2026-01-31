@@ -191,7 +191,34 @@
         .feature-card:hover { transform: translateY(-5px); border-color: var(--primary); }
         .icon { font-size: 2rem; margin-bottom: 15px; display: block; color: var(--accent); }
 
-        /* --- DEMO AO VIVO (SIMULADOR CELULAR) --- */
+        /* --- NOVA SEÇÃO: PRINT DO WHATSAPP --- */
+        .whatsapp-print-section {
+            padding: 60px 0;
+            background: radial-gradient(circle at center, rgba(37, 211, 102, 0.05) 0%, rgba(15, 17, 16, 0) 70%);
+            text-align: center;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .print-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .print-img {
+            max-width: 100%;
+            width: 380px; /* Tamanho ideal de celular */
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+            border: 4px solid #333;
+            transition: transform 0.3s;
+        }
+
+        .print-img:hover { transform: scale(1.02); }
+
+        /* --- DEMO AO VIVO --- */
         .demo-section {
             background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80');
             background-size: cover;
@@ -200,11 +227,10 @@
             text-align: center;
         }
 
-        /* A Mágica do Simulador de Celular */
         .phone-mockup {
             width: 350px;
             height: 700px;
-            background-color: #000; /* Borda preta do celular */
+            background-color: #000;
             margin: 40px auto;
             border-radius: 40px;
             border: 12px solid #1a1a1a;
@@ -213,7 +239,6 @@
             overflow: hidden;
         }
 
-        /* O "Furo" da câmera do celular */
         .phone-notch {
             position: absolute;
             top: 0;
@@ -227,11 +252,10 @@
             z-index: 10;
         }
 
-        /* O site rodando dentro */
         .phone-screen {
             width: 100%;
             height: 100%;
-            border-radius: 25px; /* Arredonda a tela interna */
+            border-radius: 25px;
             background: white;
             border: none;
         }
@@ -239,29 +263,21 @@
         /* --- RODAPÉ --- */
         footer { text-align: center; padding: 40px 0; color: var(--gray); font-size: 0.9rem; border-top: 1px solid var(--border); background-color: var(--dark-card); }
 
-        /* --- AJUSTES PARA CELULAR REAL (RESPONSIVO) --- */
+        /* --- MOBILE --- */
         @media (max-width: 768px) {
             .container { padding: 0 15px; }
             .logo-img { height: 70px; margin-bottom: 10px; }
-            .hero { padding: 20px 0; }
             .hero h1 { font-size: 2.2rem; }
-            .hero p { font-size: 1rem; margin-bottom: 30px; }
-            
+            .hero p { font-size: 1rem; }
             .btn { width: 100%; margin: 5px 0 5px 0; display: block; box-sizing: border-box; }
             .btn-outline { margin-left: 0; }
-            
             .calculator-section { padding: 40px 0; }
             .calculator-box { padding: 25px 15px; }
-            .money-input { width: 100%; max-width: 100%; font-size: 1.8rem; }
+            .money-input { width: 100%; font-size: 1.8rem; }
             .results-grid { grid-template-columns: 1fr; gap: 15px; }
+            .features-grid { grid-template-columns: 1fr; }
             
-            /* Ajuste do Simulador no Celular Real */
-            .phone-mockup {
-                width: 100%; /* Ocupa a largura total */
-                max-width: 320px; /* Mas não estoura */
-                height: 550px; /* Um pouco menor para caber na tela */
-                border-width: 8px;
-            }
+            .phone-mockup { width: 100%; max-width: 320px; height: 550px; border-width: 8px; }
             .whatsapp-float { width: 55px; height: 55px; bottom: 20px; right: 20px; font-size: 28px; }
         }
     </style>
@@ -335,6 +351,19 @@
                 <span class="icon">💎</span>
                 <h3>Profissional</h3>
                 <p style="color: var(--gray);">Seu delivery com cara de app grande, mas sem os custos.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="whatsapp-print-section">
+        <div class="container">
+            <h2 style="margin-bottom: 15px;">É assim que chega para você 📲</h2>
+            <p style="color: var(--gray); margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Chega de anotações confusas. O pedido vem 100% organizado no seu WhatsApp, pronto para imprimir e produzir.
+            </p>
+            
+            <div class="print-container">
+                <img src="https://i.imgur.com/LbKyHP2.jpeg" alt="Exemplo de Pedido no WhatsApp" class="print-img">
             </div>
         </div>
     </section>
