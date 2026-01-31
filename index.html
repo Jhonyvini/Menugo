@@ -37,7 +37,7 @@
         }
 
         .logo-img {
-            height: 60px; /* Aumentei um pouco para valorizar a logo nova */
+            height: 60px;
             width: auto;
             display: block;
         }
@@ -204,7 +204,7 @@
         .demo-section {
             background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80');
             background-size: cover;
-            background-attachment: scroll; /* Scroll funciona melhor no mobile que Fixed */
+            background-attachment: scroll;
             padding: 100px 0;
             text-align: center;
         }
@@ -221,31 +221,18 @@
 
         /* --- AJUSTES PARA CELULAR (MOBILE) --- */
         @media (max-width: 768px) {
-            /* Container com menos margem lateral para ganhar espaço */
             .container { padding: 0 15px; }
-
-            /* Header empilhado */
             header { flex-direction: column; gap: 20px; }
             .logo-img { height: 50px; }
-
-            /* Hero menor */
             .hero { padding: 40px 0; }
-            .hero h1 { font-size: 2.2rem; } /* Letra menor para não estourar */
+            .hero h1 { font-size: 2.2rem; }
             .hero p { font-size: 1rem; margin-bottom: 30px; }
-
-            /* Botões full width */
             .btn { width: 100%; margin: 5px 0 5px 0; display: block; box-sizing: border-box; }
             .btn-outline { margin-left: 0; }
-
-            /* Calculadora compacta */
             .calculator-section { padding: 40px 0; }
-            .calculator-box { padding: 25px 15px; } /* Menos padding interno */
+            .calculator-box { padding: 25px 15px; }
             .money-input { width: 100%; max-width: 100%; font-size: 1.8rem; }
-            
-            /* Resultados um embaixo do outro */
             .results-grid { grid-template-columns: 1fr; gap: 15px; }
-            
-            /* Benefícios */
             .features { padding: 60px 0; }
             .features-grid { grid-template-columns: 1fr; }
         }
@@ -256,10 +243,10 @@
     <div class="container">
         <header>
             <a href="#">
-                <img src="https://i.imgur.com/TwAfzqy.png" alt="Logo Menu Go" class="logo-img">
+                <img src="https://i.imgur.com/oX3WsMq.png" alt="Logo Menu Go" class="logo-img">
             </a>
             
-            <a href="SEU_NUMERO_DE_WHATSAPP" class="btn btn-primary" style="padding: 10px 25px; font-size: 0.9rem;">
+            <a href="https://wa.me/5531987838469" class="btn btn-primary" style="padding: 10px 25px; font-size: 0.9rem;">
                 Falar no WhatsApp
             </a>
         </header>
@@ -270,7 +257,7 @@
         <p>Receba pedidos direto no WhatsApp e livre-se das taxas abusivas. O cardápio digital que vende por você.</p>
         
         <div>
-            <a href="SEU_NUMERO_DE_WHATSAPP" class="btn btn-primary">Começar Agora</a>
+            <a href="https://wa.me/5531987838469" class="btn btn-primary">Começar Agora</a>
             <a href="https://stoplanches.vercel.app/" target="_blank" class="btn btn-outline">Testar Cardápio Demo</a>
         </div>
     </section>
@@ -300,7 +287,7 @@
 
                 <div style="margin-top: 30px;">
                     <p style="margin-bottom: 15px; font-size: 1.1rem;">Tenha <span id="economia-texto" style="color: var(--primary); font-weight: bold;">R$ 2.700,00</span> a mais no bolso.</p>
-                    <a href="SEU_NUMERO_DE_WHATSAPP" class="btn btn-primary">Quero Economizar</a>
+                    <a href="https://wa.me/5531987838469" class="btn btn-primary">Quero Economizar</a>
                 </div>
             </div>
         </div>
@@ -337,7 +324,7 @@
 
     <footer>
         <div class="container">
-            <img src="https://i.imgur.com/TwAfzqy.png" alt="Logo" style="height: 30px; opacity: 0.5; margin-bottom: 20px;">
+            <img src="https://i.imgur.com/oX3WsMq.png" alt="Logo" style="height: 30px; opacity: 0.5; margin-bottom: 20px;">
             <p>&copy; 2026 Menu Go. Tecnologia para Delivery.</p>
         </div>
     </footer>
