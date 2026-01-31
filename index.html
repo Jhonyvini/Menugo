@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Go | Delivery Sem Taxas</title>
+    <style>
+        /* --- ESTILO GERAL --- */
+        :root {
+            --primary: #00E676; /* Verde Zap/Lucro */
+            --dark: #121212;    /* Fundo Principal */
+            --dark-card: #1E1E1E; /* Fundo Cartões */
+            --light: #FFFFFF;
+            --gray: #B0B0B0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        
+        body { background-color: var(--dark); color: var(--light); line-height: 1.6; }
+        
+        a { text-decoration: none; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* --- BOTÕES --- */
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--dark);
+            box-shadow: 0 4px 15px rgba(0, 230, 118, 0.4);
+        }
+
+        .btn-primary:hover { transform: scale(1.05); background-color: #00c766; }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            margin-left: 10px;
+        }
+
+        .btn-outline:hover { background-color: var(--primary); color: var(--dark); }
+
+        /* --- HEADER --- */
+        header { padding: 20px 0; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); display: flex; align-items: center; gap: 10px; }
+
+        /* --- HERO SECTION (CAPA) --- */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 { font-size: 3rem; margin-bottom: 20px; line-height: 1.2; }
+        .hero h1 span { color: var(--primary); }
+        .hero p { font-size: 1.2rem; color: var(--gray); margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto; }
+
+        /* --- SEÇÃO PROBLEMA (CALCULADORA) --- */
+        .pain-point { background-color: var(--dark-card); padding: 60px 0; text-align: center; }
+        .stat-box {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        .stat-card {
+            background: #252525;
+            padding: 30px;
+            border-radius: 15px;
+            width: 300px;
+            border: 1px solid #333;
+        }
+        .stat-card h3 { color: #FF4444; font-size: 2rem; margin-bottom: 10px; }
+        .stat-card p { color: var(--gray); }
+
+        /* --- BENEFÍCIOS --- */
+        .features { padding: 80px 0; }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .feature-card {
+            background: var(--dark-card);
+            padding: 30px;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+        .feature-card:hover { transform: translateY(-5px); border-bottom: 3px solid var(--primary); }
+        .icon { font-size: 2rem; margin-bottom: 15px; display: block; }
+
+        /* --- DEMO (PROVA SOCIAL) --- */
+        .demo-section {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80');
+            background-size: cover;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        /* --- RODAPÉ --- */
+        footer { text-align: center; padding: 40px 0; color: var(--gray); font-size: 0.9rem; border-top: 1px solid #333; }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .btn { width: 100%; margin-bottom: 10px; margin-left: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8l-4-4-4 4"/><path d="M14 4v10"/><path d="M4 20h16"/></svg>
+                Menu Go
+            </div>
+            <a href="SEU_NUMERO_DE_WHATSAPP" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.8rem;">Falar no Zap</a>
+        </header>
+    </div>
+
+    <section class="hero container">
+        <h1>Seu Delivery no<br><span>Piloto Automático</span></h1>
+        <p>Receba pedidos direto no WhatsApp, organize sua cozinha e pare de pagar taxas abusivas para aplicativos. O cardápio digital que vende por você.</p>
+        
+        <div>
+            <a href="SEU_NUMERO_DE_WHATSAPP" class="btn btn-primary">Quero Vender Mais</a>
+            <a href="#demo" class="btn btn-outline">Ver Demonstração</a>
+        </div>
+    </section>
+
+    <section class="pain-point">
+        <div class="container">
+            <h2>Quanto você perde por mês?</h2>
+            <p>Se você fatura R$ 10.000,00 nos apps, veja a realidade:</p>
+            
+            <div class="stat-box">
+                <div class="stat-card">
+                    <h3>- R$ 2.700</h3>
+                    <p>Média de taxas (27%) perdidas todo mês para plataformas.</p>
+                </div>
+                <div class="stat-card" style="border-color: var(--primary);">
+                    <h3 style="color: var(--primary);">R$ 0,00</h3>
+                    <p>Custo por pedido no <strong>Menu Go</strong>. Seu lucro é 100% seu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features container">
+        <h2 style="text-align: center;">Por que escolher o Menu Go?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <span class="icon">🤖</span>
+                <h3>Atendimento Robotizado</h3>
+                <p>O cliente faz o pedido e o robô já manda tudo somado e organizado para sua cozinha. Sem erros.</p>
+            </div>
+            <div class="feature-card">
+                <span class="icon">🚀</span>
+                <h3>Sem App para Baixar</h3>
+                <p>Seu cliente clica no link e pede. Rápido, leve e funciona em qualquer celular.</p>
+            </div>
+            <div class="feature-card">
+                <span class="icon">💸</span>
+                <h3>Taxa Zero</h3>
+                <p>Pague apenas a mensalidade fixa. Venda 10 ou 1000 hambúrgueres, o preço é o mesmo.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="demo" class="demo-section">
+        <div class="container">
+            <h1>Veja como seu cliente vai pedir</h1>
+            <p style="color: white; margin-bottom: 30px;">Temos um cardápio modelo pronto para você testar agora.</p>
+            <a href="LINK_DO_SEU_DEMO_AQUI" target="_blank" class="btn btn-primary">Testar Cardápio Demo</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Menu Go. Tecnologia para Delivery.</p>
+            <p style="margin-top: 10px; font-size: 0.8rem;">Desenvolvido com ❤️ para empreendedores.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
