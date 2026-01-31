@@ -3,119 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Go | Delivery Sem Taxas</title>
+    <title>Menu Go | Seu Delivery Sem Taxas</title>
     <style>
-        /* --- ESTILO GERAL --- */
+        /* --- CONFIGURAÇÕES GERAIS E CORES (Baseado na sua Logo) --- */
         :root {
-            --primary: #00E676; /* Verde Zap/Lucro */
-            --dark: #121212;    /* Fundo Principal */
-            --dark-card: #1E1E1E; /* Fundo Cartões */
-            --light: #FFFFFF;
-            --gray: #B0B0B0;
+            /* Verde Esmeralda/Teal extraído da identidade visual */
+            --primary: #008f68; 
+            --primary-hover: #007a58;
+            --accent: #00ffaa; /* Um verde mais neon para detalhes pequenos */
+            
+            --dark: #0f1110;       /* Fundo quase preto */
+            --dark-card: #1a1d1c;  /* Fundo dos cartões */
+            --light: #ffffff;
+            --gray: #a0a0a0;
+            --border: #2a2e2d;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         
-        body { background-color: var(--dark); color: var(--light); line-height: 1.6; }
+        body { background-color: var(--dark); color: var(--light); line-height: 1.6; overflow-x: hidden; }
         
         a { text-decoration: none; }
+        input:focus { outline: 2px solid var(--primary); }
 
         .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* --- CABEÇALHO --- */
+        header { 
+            padding: 20px 0; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+
+        .logo-img {
+            height: 50px; /* Tamanho ajustado para ficar elegante */
+            width: auto;
+        }
 
         /* --- BOTÕES --- */
         .btn {
             display: inline-block;
-            padding: 15px 30px;
-            border-radius: 50px;
-            font-weight: bold;
+            padding: 15px 35px;
+            border-radius: 8px; /* Bordas um pouco mais quadradas, mais moderno */
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: 0.3s;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
             cursor: pointer;
             border: none;
+            text-align: center;
         }
 
         .btn-primary {
             background-color: var(--primary);
-            color: var(--dark);
-            box-shadow: 0 4px 15px rgba(0, 230, 118, 0.4);
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 143, 104, 0.3);
         }
 
-        .btn-primary:hover { transform: scale(1.05); background-color: #00c766; }
+        .btn-primary:hover { 
+            background-color: var(--primary-hover); 
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 143, 104, 0.5);
+        }
 
         .btn-outline {
+            background: transparent;
             border: 2px solid var(--primary);
             color: var(--primary);
             margin-left: 10px;
         }
 
-        .btn-outline:hover { background-color: var(--primary); color: var(--dark); }
-
-        /* --- HEADER --- */
-        header { padding: 20px 0; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); display: flex; align-items: center; gap: 10px; }
+        .btn-outline:hover { 
+            background-color: var(--primary); 
+            color: #fff; 
+        }
 
         /* --- HERO SECTION (CAPA) --- */
         .hero {
+            padding: 80px 0 60px 0;
+            text-align: center;
+            background: radial-gradient(circle at center, rgba(0, 143, 104, 0.1) 0%, rgba(15, 17, 16, 0) 70%);
+        }
+
+        .hero h1 { 
+            font-size: 3.5rem; 
+            margin-bottom: 20px; 
+            line-height: 1.1; 
+            font-weight: 800;
+        }
+        
+        .hero h1 span { 
+            color: var(--primary); 
+            background: -webkit-linear-gradient(45deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p { 
+            font-size: 1.25rem; 
+            color: var(--gray); 
+            margin-bottom: 40px; 
+            max-width: 700px; 
+            margin-left: auto; 
+            margin-right: auto; 
+        }
+
+        /* --- SEÇÃO CALCULADORA (INTERATIVA) --- */
+        .calculator-section {
+            background-color: var(--dark-card);
             padding: 80px 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
             text-align: center;
         }
 
-        .hero h1 { font-size: 3rem; margin-bottom: 20px; line-height: 1.2; }
-        .hero h1 span { color: var(--primary); }
-        .hero p { font-size: 1.2rem; color: var(--gray); margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto; }
-
-        /* --- SEÇÃO PROBLEMA (CALCULADORA) --- */
-        .pain-point { background-color: var(--dark-card); padding: 60px 0; text-align: center; }
-        .stat-box {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-top: 40px;
-        }
-        .stat-card {
-            background: #252525;
-            padding: 30px;
-            border-radius: 15px;
-            width: 300px;
+        .calculator-box {
+            background: #252827;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 800px;
+            margin: 40px auto 0 auto;
             border: 1px solid #333;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
-        .stat-card h3 { color: #FF4444; font-size: 2rem; margin-bottom: 10px; }
-        .stat-card p { color: var(--gray); }
+
+        .input-group {
+            margin-bottom: 40px;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--light);
+        }
+
+        .money-input {
+            background: #1a1d1c;
+            border: 2px solid var(--border);
+            color: var(--primary);
+            font-size: 2.5rem;
+            padding: 15px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .result-card {
+            background: #1a1d1c;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .result-card h3 { font-size: 0.9rem; color: var(--gray); margin-bottom: 5px; text-transform: uppercase; }
+        .result-card .value { font-size: 2rem; font-weight: bold; }
+        
+        .loss-value { color: #ff4d4d; }
+        .profit-value { color: var(--primary); }
 
         /* --- BENEFÍCIOS --- */
-        .features { padding: 80px 0; }
+        .features { padding: 100px 0; }
+        
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            margin-top: 40px;
+            margin-top: 50px;
         }
+
         .feature-card {
             background: var(--dark-card);
-            padding: 30px;
+            padding: 40px 30px;
             border-radius: 15px;
+            border: 1px solid var(--border);
             transition: 0.3s;
         }
-        .feature-card:hover { transform: translateY(-5px); border-bottom: 3px solid var(--primary); }
-        .icon { font-size: 2rem; margin-bottom: 15px; display: block; }
 
-        /* --- DEMO (PROVA SOCIAL) --- */
+        .feature-card:hover { 
+            transform: translateY(-10px); 
+            border-color: var(--primary); 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .icon { 
+            font-size: 2.5rem; 
+            margin-bottom: 20px; 
+            display: block; 
+            color: var(--accent);
+        }
+
+        /* --- DEMO SECTION --- */
         .demo-section {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80');
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80');
             background-size: cover;
-            padding: 100px 0;
+            background-attachment: fixed; /* Efeito parallax bonito */
+            padding: 120px 0;
             text-align: center;
         }
 
-        /* --- RODAPÉ --- */
-        footer { text-align: center; padding: 40px 0; color: var(--gray); font-size: 0.9rem; border-top: 1px solid #333; }
+        .demo-section h2 { font-size: 2.5rem; margin-bottom: 15px; }
 
-        /* MOBILE */
+        /* --- RODAPÉ --- */
+        footer { 
+            text-align: center; 
+            padding: 50px 0; 
+            color: var(--gray); 
+            font-size: 0.9rem; 
+            border-top: 1px solid var(--border); 
+            background-color: var(--dark-card);
+        }
+
+        /* --- MOBILE --- */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .btn { width: 100%; margin-bottom: 10px; margin-left: 0; }
+            .hero h1 { font-size: 2.2rem; }
+            .money-input { font-size: 1.8rem; width: 100%; }
+            .results-grid { grid-template-columns: 1fr; }
+            .btn { width: 100%; margin-bottom: 15px; margin-left: 0; }
+            header { flex-direction: column; gap: 15px; }
         }
     </style>
 </head>
@@ -123,11 +238,13 @@
 
     <div class="container">
         <header>
-            <div class="logo">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8l-4-4-4 4"/><path d="M14 4v10"/><path d="M4 20h16"/></svg>
-                Menu Go
-            </div>
-            <a href="SEU_NUMERO_DE_WHATSAPP" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.8rem;">Falar no Zap</a>
+            <a href="#">
+                <img src="https://i.imgur.com/755ki3J.jpeg" alt="Logo Menu Go" class="logo-img">
+            </a>
+            
+            <a href="SEU_NUMERO_DE_WHATSAPP" class="btn btn-primary" style="padding: 10px 25px; font-size: 0.8rem;">
+                Falar no WhatsApp
+            </a>
         </header>
     </div>
 
@@ -136,64 +253,106 @@
         <p>Receba pedidos direto no WhatsApp, organize sua cozinha e pare de pagar taxas abusivas para aplicativos. O cardápio digital que vende por você.</p>
         
         <div>
-            <a href="SEU_NUMERO_DE_WHATSAPP" class="btn btn-primary">Quero Vender Mais</a>
-            <a href="#demo" class="btn btn-outline">Ver Demonstração</a>
+            <a href="SEU_NUMERO_DE_WHATSAPP" class="btn btn-primary">Começar Agora</a>
+            <a href="https://stoplanches.vercel.app/" target="_blank" class="btn btn-outline">Testar Cardápio Demo</a>
         </div>
     </section>
 
-    <section class="pain-point">
+    <section class="calculator-section">
         <div class="container">
-            <h2>Quanto você perde por mês?</h2>
-            <p>Se você fatura R$ 10.000,00 nos apps, veja a realidade:</p>
+            <h2>Simule sua Economia</h2>
+            <p style="color: var(--gray);">Veja quanto dinheiro você está deixando na mesa todo mês.</p>
             
-            <div class="stat-box">
-                <div class="stat-card">
-                    <h3>- R$ 2.700</h3>
-                    <p>Média de taxas (27%) perdidas todo mês para plataformas.</p>
+            <div class="calculator-box">
+                <div class="input-group">
+                    <label for="faturamento">Quanto você vende por mês nos Apps? (R$)</label>
+                    <input type="number" id="faturamento" class="money-input" value="10000" oninput="calcularPrejuizo()">
                 </div>
-                <div class="stat-card" style="border-color: var(--primary);">
-                    <h3 style="color: var(--primary);">R$ 0,00</h3>
-                    <p>Custo por pedido no <strong>Menu Go</strong>. Seu lucro é 100% seu.</p>
+
+                <div class="results-grid">
+                    <div class="result-card" style="border-color: #ff4d4d33;">
+                        <h3>Você Perde em Taxas (Aprox. 27%)</h3>
+                        <div class="value loss-value" id="perda">R$ 2.700,00</div>
+                        <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">Dinheiro jogado fora</p>
+                    </div>
+
+                    <div class="result-card" style="border-color: var(--primary);">
+                        <h3>Custo por Pedido no Menu Go</h3>
+                        <div class="value profit-value">R$ 0,00</div>
+                        <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">Lucro 100% seu</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 30px;">
+                    <p style="margin-bottom: 15px; font-size: 1.1rem;">Imagine o que você faria com <span id="economia-texto" style="color: var(--primary); font-weight: bold;">R$ 2.700,00</span> a mais todo mês?</p>
+                    <a href="SEU_NUMERO_DE_WHATSAPP" class="btn btn-primary">Quero Parar de Perder Dinheiro</a>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="features container">
-        <h2 style="text-align: center;">Por que escolher o Menu Go?</h2>
+        <h2 style="text-align: center; font-size: 2.5rem;">Por que o Menu Go é diferente?</h2>
         <div class="features-grid">
             <div class="feature-card">
                 <span class="icon">🤖</span>
                 <h3>Atendimento Robotizado</h3>
-                <p>O cliente faz o pedido e o robô já manda tudo somado e organizado para sua cozinha. Sem erros.</p>
+                <p style="color: var(--gray);">O cliente faz o pedido e o robô já manda tudo somado e organizado para sua cozinha. Sem erros de anotação.</p>
             </div>
             <div class="feature-card">
-                <span class="icon">🚀</span>
-                <h3>Sem App para Baixar</h3>
-                <p>Seu cliente clica no link e pede. Rápido, leve e funciona em qualquer celular.</p>
+                <span class="icon">⚡</span>
+                <h3>Leve e Rápido</h3>
+                <p style="color: var(--gray);">Seu cliente não precisa baixar nada. Ele clica no link e o cardápio abre na hora, mesmo em 3G/4G.</p>
             </div>
             <div class="feature-card">
-                <span class="icon">💸</span>
-                <h3>Taxa Zero</h3>
-                <p>Pague apenas a mensalidade fixa. Venda 10 ou 1000 hambúrgueres, o preço é o mesmo.</p>
+                <span class="icon">🔒</span>
+                <h3>Domínio Próprio</h3>
+                <p style="color: var(--gray);">Passe mais credibilidade profissional com um site que tem o nome da sua marca, não a de terceiros.</p>
             </div>
         </div>
     </section>
 
-    <section id="demo" class="demo-section">
+    <section class="demo-section">
         <div class="container">
-            <h1>Veja como seu cliente vai pedir</h1>
-            <p style="color: white; margin-bottom: 30px;">Temos um cardápio modelo pronto para você testar agora.</p>
-            <a href="LINK_DO_SEU_DEMO_AQUI" target="_blank" class="btn btn-primary">Testar Cardápio Demo</a>
+            <h2>Veja a mágica acontecendo</h2>
+            <p style="color: #fff; margin-bottom: 30px; font-size: 1.2rem;">Preparamos um modelo real para você navegar.</p>
+            <a href="https://stoplanches.vercel.app/" target="_blank" class="btn btn-primary">Abrir Demo Agora</a>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Menu Go. Tecnologia para Delivery.</p>
-            <p style="margin-top: 10px; font-size: 0.8rem;">Desenvolvido com ❤️ para empreendedores.</p>
+            <img src="https://i.imgur.com/755ki3J.jpeg" alt="Logo" style="height: 30px; opacity: 0.5; margin-bottom: 20px;">
+            <p>&copy; 2026 Menu Go. Todos os direitos reservados.</p>
+            <p style="margin-top: 10px; font-size: 0.8rem;">Feito para quem quer lucrar de verdade.</p>
         </div>
     </footer>
+
+    <script>
+        // Função que roda toda vez que alguém digita um número
+        function calcularPrejuizo() {
+            // 1. Pega o valor que o usuário digitou
+            let faturamento = document.getElementById('faturamento').value;
+            
+            // Se estiver vazio, considera zero
+            if (faturamento === "") { faturamento = 0; }
+            
+            // 2. Calcula a perda (27%)
+            let perda = faturamento * 0.27;
+
+            // 3. Formata para dinheiro (R$)
+            let perdaFormatada = perda.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+            // 4. Atualiza os textos na tela
+            document.getElementById('perda').innerText = perdaFormatada;
+            document.getElementById('economia-texto').innerText = perdaFormatada;
+        }
+
+        // Roda uma vez ao carregar a página para já mostrar os 10 mil iniciais
+        document.addEventListener('DOMContentLoaded', (event) => {
+            calcularPrejuizo();
+        });
+    </script>
 
 </body>
 </html>
