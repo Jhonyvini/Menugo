@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Go | Seu Delivery Sem Taxas</title>
     <style>
-        /* --- CONFIGURAÇÕES GERAIS E CORES (Baseado na sua Logo) --- */
+        /* --- CONFIGURAÇÕES GERAIS --- */
         :root {
-            /* Verde Esmeralda/Teal extraído da identidade visual */
+            /* Verde Esmeralda/Teal da marca */
             --primary: #008f68; 
             --primary-hover: #007a58;
-            --accent: #00ffaa; /* Um verde mais neon para detalhes pequenos */
+            --accent: #00ffaa; 
             
-            --dark: #0f1110;       /* Fundo quase preto */
-            --dark-card: #1a1d1c;  /* Fundo dos cartões */
+            --dark: #0f1110;       
+            --dark-card: #1a1d1c;  
             --light: #ffffff;
             --gray: #a0a0a0;
             --border: #2a2e2d;
@@ -37,15 +37,16 @@
         }
 
         .logo-img {
-            height: 50px; /* Tamanho ajustado para ficar elegante */
+            height: 60px; /* Aumentei um pouco para valorizar a logo nova */
             width: auto;
+            display: block;
         }
 
         /* --- BOTÕES --- */
         .btn {
             display: inline-block;
             padding: 15px 35px;
-            border-radius: 8px; /* Bordas um pouco mais quadradas, mais moderno */
+            border-radius: 8px;
             font-weight: 700;
             text-transform: uppercase;
             font-size: 0.9rem;
@@ -82,9 +83,9 @@
 
         /* --- HERO SECTION (CAPA) --- */
         .hero {
-            padding: 80px 0 60px 0;
+            padding: 60px 0 40px 0;
             text-align: center;
-            background: radial-gradient(circle at center, rgba(0, 143, 104, 0.1) 0%, rgba(15, 17, 16, 0) 70%);
+            background: radial-gradient(circle at center, rgba(0, 143, 104, 0.15) 0%, rgba(15, 17, 16, 0) 70%);
         }
 
         .hero h1 { 
@@ -104,16 +105,16 @@
         .hero p { 
             font-size: 1.25rem; 
             color: var(--gray); 
-            margin-bottom: 40px; 
+            margin-bottom: 30px; 
             max-width: 700px; 
             margin-left: auto; 
             margin-right: auto; 
         }
 
-        /* --- SEÇÃO CALCULADORA (INTERATIVA) --- */
+        /* --- SEÇÃO CALCULADORA --- */
         .calculator-section {
             background-color: var(--dark-card);
-            padding: 80px 0;
+            padding: 60px 0;
             border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
             text-align: center;
@@ -124,18 +125,14 @@
             padding: 40px;
             border-radius: 20px;
             max-width: 800px;
-            margin: 40px auto 0 auto;
+            margin: 30px auto 0 auto;
             border: 1px solid #333;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
-        .input-group {
-            margin-bottom: 40px;
-        }
-
         .input-group label {
             display: block;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 10px;
             color: var(--light);
         }
@@ -144,13 +141,14 @@
             background: #1a1d1c;
             border: 2px solid var(--border);
             color: var(--primary);
-            font-size: 2.5rem;
+            font-size: 2rem;
             padding: 15px;
             width: 100%;
-            max-width: 400px;
+            max-width: 300px;
             text-align: center;
             border-radius: 10px;
             font-weight: bold;
+            margin-bottom: 30px;
         }
 
         .results-grid {
@@ -166,71 +164,90 @@
             border: 1px solid var(--border);
         }
 
-        .result-card h3 { font-size: 0.9rem; color: var(--gray); margin-bottom: 5px; text-transform: uppercase; }
-        .result-card .value { font-size: 2rem; font-weight: bold; }
+        .result-card h3 { font-size: 0.8rem; color: var(--gray); margin-bottom: 5px; text-transform: uppercase; }
+        .result-card .value { font-size: 1.8rem; font-weight: bold; }
         
         .loss-value { color: #ff4d4d; }
         .profit-value { color: var(--primary); }
 
         /* --- BENEFÍCIOS --- */
-        .features { padding: 100px 0; }
+        .features { padding: 80px 0; }
         
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
-            margin-top: 50px;
+            margin-top: 40px;
         }
 
         .feature-card {
             background: var(--dark-card);
-            padding: 40px 30px;
+            padding: 30px;
             border-radius: 15px;
             border: 1px solid var(--border);
             transition: 0.3s;
         }
 
         .feature-card:hover { 
-            transform: translateY(-10px); 
+            transform: translateY(-5px); 
             border-color: var(--primary); 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         .icon { 
-            font-size: 2.5rem; 
-            margin-bottom: 20px; 
+            font-size: 2rem; 
+            margin-bottom: 15px; 
             display: block; 
             color: var(--accent);
         }
 
         /* --- DEMO SECTION --- */
         .demo-section {
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80');
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80');
             background-size: cover;
-            background-attachment: fixed; /* Efeito parallax bonito */
-            padding: 120px 0;
+            background-attachment: scroll; /* Scroll funciona melhor no mobile que Fixed */
+            padding: 100px 0;
             text-align: center;
         }
-
-        .demo-section h2 { font-size: 2.5rem; margin-bottom: 15px; }
 
         /* --- RODAPÉ --- */
         footer { 
             text-align: center; 
-            padding: 50px 0; 
+            padding: 40px 0; 
             color: var(--gray); 
             font-size: 0.9rem; 
             border-top: 1px solid var(--border); 
             background-color: var(--dark-card);
         }
 
-        /* --- MOBILE --- */
+        /* --- AJUSTES PARA CELULAR (MOBILE) --- */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            .money-input { font-size: 1.8rem; width: 100%; }
-            .results-grid { grid-template-columns: 1fr; }
-            .btn { width: 100%; margin-bottom: 15px; margin-left: 0; }
-            header { flex-direction: column; gap: 15px; }
+            /* Container com menos margem lateral para ganhar espaço */
+            .container { padding: 0 15px; }
+
+            /* Header empilhado */
+            header { flex-direction: column; gap: 20px; }
+            .logo-img { height: 50px; }
+
+            /* Hero menor */
+            .hero { padding: 40px 0; }
+            .hero h1 { font-size: 2.2rem; } /* Letra menor para não estourar */
+            .hero p { font-size: 1rem; margin-bottom: 30px; }
+
+            /* Botões full width */
+            .btn { width: 100%; margin: 5px 0 5px 0; display: block; box-sizing: border-box; }
+            .btn-outline { margin-left: 0; }
+
+            /* Calculadora compacta */
+            .calculator-section { padding: 40px 0; }
+            .calculator-box { padding: 25px 15px; } /* Menos padding interno */
+            .money-input { width: 100%; max-width: 100%; font-size: 1.8rem; }
+            
+            /* Resultados um embaixo do outro */
+            .results-grid { grid-template-columns: 1fr; gap: 15px; }
+            
+            /* Benefícios */
+            .features { padding: 60px 0; }
+            .features-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -239,10 +256,10 @@
     <div class="container">
         <header>
             <a href="#">
-                <img src="https://i.imgur.com/755ki3J.jpeg" alt="Logo Menu Go" class="logo-img">
+                <img src="https://i.imgur.com/TwAfzqy.png" alt="Logo Menu Go" class="logo-img">
             </a>
             
-            <a href="SEU_NUMERO_DE_WHATSAPP" class="btn btn-primary" style="padding: 10px 25px; font-size: 0.8rem;">
+            <a href="SEU_NUMERO_DE_WHATSAPP" class="btn btn-primary" style="padding: 10px 25px; font-size: 0.9rem;">
                 Falar no WhatsApp
             </a>
         </header>
@@ -250,7 +267,7 @@
 
     <section class="hero container">
         <h1>Seu Delivery no<br><span>Piloto Automático</span></h1>
-        <p>Receba pedidos direto no WhatsApp, organize sua cozinha e pare de pagar taxas abusivas para aplicativos. O cardápio digital que vende por você.</p>
+        <p>Receba pedidos direto no WhatsApp e livre-se das taxas abusivas. O cardápio digital que vende por você.</p>
         
         <div>
             <a href="SEU_NUMERO_DE_WHATSAPP" class="btn btn-primary">Começar Agora</a>
@@ -261,94 +278,79 @@
     <section class="calculator-section">
         <div class="container">
             <h2>Simule sua Economia</h2>
-            <p style="color: var(--gray);">Veja quanto dinheiro você está deixando na mesa todo mês.</p>
+            <p style="color: var(--gray); margin-bottom: 20px;">Veja quanto dinheiro você perde todo mês.</p>
             
             <div class="calculator-box">
                 <div class="input-group">
-                    <label for="faturamento">Quanto você vende por mês nos Apps? (R$)</label>
+                    <label for="faturamento">Vendas Mensais nos Apps (R$)</label>
                     <input type="number" id="faturamento" class="money-input" value="10000" oninput="calcularPrejuizo()">
                 </div>
 
                 <div class="results-grid">
                     <div class="result-card" style="border-color: #ff4d4d33;">
-                        <h3>Você Perde em Taxas (Aprox. 27%)</h3>
+                        <h3>Você Perde em Taxas (27%)</h3>
                         <div class="value loss-value" id="perda">R$ 2.700,00</div>
-                        <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">Dinheiro jogado fora</p>
                     </div>
 
                     <div class="result-card" style="border-color: var(--primary);">
-                        <h3>Custo por Pedido no Menu Go</h3>
+                        <h3>Custo Menu Go</h3>
                         <div class="value profit-value">R$ 0,00</div>
-                        <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">Lucro 100% seu</p>
                     </div>
                 </div>
 
                 <div style="margin-top: 30px;">
-                    <p style="margin-bottom: 15px; font-size: 1.1rem;">Imagine o que você faria com <span id="economia-texto" style="color: var(--primary); font-weight: bold;">R$ 2.700,00</span> a mais todo mês?</p>
-                    <a href="SEU_NUMERO_DE_WHATSAPP" class="btn btn-primary">Quero Parar de Perder Dinheiro</a>
+                    <p style="margin-bottom: 15px; font-size: 1.1rem;">Tenha <span id="economia-texto" style="color: var(--primary); font-weight: bold;">R$ 2.700,00</span> a mais no bolso.</p>
+                    <a href="SEU_NUMERO_DE_WHATSAPP" class="btn btn-primary">Quero Economizar</a>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="features container">
-        <h2 style="text-align: center; font-size: 2.5rem;">Por que o Menu Go é diferente?</h2>
+        <h2 style="text-align: center; margin-bottom: 10px;">Diferenciais</h2>
         <div class="features-grid">
             <div class="feature-card">
                 <span class="icon">🤖</span>
-                <h3>Atendimento Robotizado</h3>
-                <p style="color: var(--gray);">O cliente faz o pedido e o robô já manda tudo somado e organizado para sua cozinha. Sem erros de anotação.</p>
+                <h3>100% Automático</h3>
+                <p style="color: var(--gray);">O robô envia o pedido pronto para a cozinha. Sem erros.</p>
             </div>
             <div class="feature-card">
                 <span class="icon">⚡</span>
-                <h3>Leve e Rápido</h3>
-                <p style="color: var(--gray);">Seu cliente não precisa baixar nada. Ele clica no link e o cardápio abre na hora, mesmo em 3G/4G.</p>
+                <h3>Sem Instalar Nada</h3>
+                <p style="color: var(--gray);">Seu cliente clica no link e pede. Rápido e fácil.</p>
             </div>
             <div class="feature-card">
-                <span class="icon">🔒</span>
-                <h3>Domínio Próprio</h3>
-                <p style="color: var(--gray);">Passe mais credibilidade profissional com um site que tem o nome da sua marca, não a de terceiros.</p>
+                <span class="icon">💎</span>
+                <h3>Profissional</h3>
+                <p style="color: var(--gray);">Seu delivery com cara de app grande, mas sem os custos.</p>
             </div>
         </div>
     </section>
 
     <section class="demo-section">
         <div class="container">
-            <h2>Veja a mágica acontecendo</h2>
-            <p style="color: #fff; margin-bottom: 30px; font-size: 1.2rem;">Preparamos um modelo real para você navegar.</p>
+            <h2>Veja funcionando</h2>
+            <p style="color: #fff; margin-bottom: 30px;">Acesse nosso modelo de demonstração.</p>
             <a href="https://stoplanches.vercel.app/" target="_blank" class="btn btn-primary">Abrir Demo Agora</a>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <img src="https://i.imgur.com/755ki3J.jpeg" alt="Logo" style="height: 30px; opacity: 0.5; margin-bottom: 20px;">
-            <p>&copy; 2026 Menu Go. Todos os direitos reservados.</p>
-            <p style="margin-top: 10px; font-size: 0.8rem;">Feito para quem quer lucrar de verdade.</p>
+            <img src="https://i.imgur.com/TwAfzqy.png" alt="Logo" style="height: 30px; opacity: 0.5; margin-bottom: 20px;">
+            <p>&copy; 2026 Menu Go. Tecnologia para Delivery.</p>
         </div>
     </footer>
 
     <script>
-        // Função que roda toda vez que alguém digita um número
         function calcularPrejuizo() {
-            // 1. Pega o valor que o usuário digitou
             let faturamento = document.getElementById('faturamento').value;
-            
-            // Se estiver vazio, considera zero
             if (faturamento === "") { faturamento = 0; }
-            
-            // 2. Calcula a perda (27%)
             let perda = faturamento * 0.27;
-
-            // 3. Formata para dinheiro (R$)
             let perdaFormatada = perda.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-
-            // 4. Atualiza os textos na tela
             document.getElementById('perda').innerText = perdaFormatada;
             document.getElementById('economia-texto').innerText = perdaFormatada;
         }
-
-        // Roda uma vez ao carregar a página para já mostrar os 10 mil iniciais
         document.addEventListener('DOMContentLoaded', (event) => {
             calcularPrejuizo();
         });
